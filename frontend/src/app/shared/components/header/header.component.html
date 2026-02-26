@@ -2,7 +2,7 @@
     <div class="header__title">
         <a routerLink="/network">LinkedOut</a>
     </div>
-    <app-avatar [firstName]="'Gengiu'" [lastName]="'Robert'"></app-avatar>
+    <app-avatar [firstName]="user?.firstName || 'Gengiu'" [lastName]="user?.lastName || 'Robert'"></app-avatar>
 </div>
 <div class="header__actions">
     <button class="hamburger-menu" mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>

@@ -22,8 +22,13 @@ export class NetworkTableComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.usersService.allUsers().subscribe((users) => {
-      this.users = users;
+    this.usersService.allUsers().subscribe({
+      next: (users) => {
+        this.users = users;
+      },
+      error: (err) => {
+        console.error('Error fetching users:', err);
+      }
     })
   }
 
